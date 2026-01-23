@@ -694,6 +694,65 @@ section {
 }
 
 /* =========================================================
+   WIFI Config style
+   ========================================================= */
+.config-section {
+  padding-block: var(--space-7);
+}
+
+.config.container {
+  display: flex;
+  align-items: center;    
+  gap: var(--space-6);
+  background: white;
+  padding: var(--space-5);
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border);
+}
+
+
+.config__text-group {
+  flex: 2;           
+}
+
+.config__image-wrapper {
+  flex: 0 0 300px;        
+  display: flex;
+  justify-content: flex-end;
+}
+
+.config__image {
+  width: 100%;            
+  height: auto;
+  border-radius: 8px;
+}
+
+.config__heading {
+  font-family: var(--ff-nino-medium-caps);
+  font-size: var(--fs-lg);
+  margin-bottom: var(--space-3);
+  color: var(--color-text);
+}
+
+.config__description {
+  color: var(--color-muted);
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .config.container {
+    flex-direction: column-reverse; 
+    text-align: center;
+  }
+  
+  .config__image-wrapper {
+    flex: 0 0 auto;
+    width: 120px;  
+    margin-bottom: var(--space-3);
+  }
+}
+/* =========================================================
    Project Icons & Links - Enhanced Interactive Row
    ========================================================= */
 
