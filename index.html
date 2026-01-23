@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <title>გაზქურის მონიტორინგის სისტემა</title>
+  </head>
+  <body>
+    <header class="hero">
+      <img
+        class="hero__image"
+        src="assets/ISU-logo.svg"
+        alt="ილიას სახელმწიფო უნივერსიტეტი"
+      />
+      <h1 class="hero__heading">გაზქურის მონიტორინგის სისტემა</h1>
+      <p class="hero__subheading">
+        სისტემა, რომელიც თქვენი სამზარეულოს უსაფრთხოებაზე იზრუნებს
+      </p>
+    </header>
+
+    <!-- ========================== -->
+    <!-- 1. Problem Description -->
+    <!-- ========================== -->
+    <section class="section">
+      <div class="section__container container">
+        <div class="section__text">
+          <h2 class="section__heading">პრობლემა</h2>
+          <p class="section__paragraph">
+            თანამედროვე საყოფაცხოვრებო გარემოში სამზარეულო ხანძრის გაჩენის ყველაზე მაღალი რისკის ზონას წარმოადგენს, სადაც ინციდენტების თითქმის ნახევარი საკვების მომზადებისას დაშვებული შეცდომებით ან უყურადღებოდ დატოვებული გაზქურებითაა გამოწვეული. 
+            არსებული უსაფრთხოების მოწყობილობები, როგორიცაა კვამლისა თუ გაზის სტანდარტული დეტექტორები, ხშირად არაეფექტურია, რადგან მათი მუშაობის პრინციპი უკვე მომხდარი ფაქტის დაფიქსირებაზეა დაფუძნებული. 
+            ეს იწვევს დაგვიანებულ რეაგირებას, როდესაც ცეცხლი უკვე გავრცელებულია. გარდა ამისა, ამ სისტემებს ახასიათებთ ცრუ განგაშის მაღალი ალბათობა და დისტანციური კონტროლის არქონა, 
+            რაც განსაკუთრებულ საფრთხეს უქმნის ხანდაზმულებსა და დატვირთული გრაფიკის მქონე პირებს, რომელთაც შესაძლოა ჩართული მოწყობილობების კონტროლი დაავიწყდეთ.
+          </p>
+        </div>
+
+        <div class="section__image-wrapper">
+          <img class="section__image" src="assets/Problem.png" alt="პრობლემა" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================== -->
+    <!-- 2. Way of Solution -->
+    <!-- ========================== -->
+    <br />
+    <br />
+    <br />
+    <section id="section">
+      <div class="section__container container">
+        <div class="section__text">
+          <h2 class="section__heading">გადაჭრის გზა</h2>
+          <p class="section__paragraph">
+          აღნიშნული საფრთხეების პრევენციისთვის, ჩვენი პროექტი ითვალისწინებს ინოვაციური, არაკონტაქტური მონიტორინგის სისტემის შექმნას, რომელიც ახორციელებს გაზქურის ზედაპირის უწყვეტ თერმულ სკანირებას 32X24 პიქსელიანი გარჩევადობის MLX90640 კამერის მეშვეობით. 
+          ESP32-S3 მიკროკონტროლერზე დაფუძნებული სისტემა რეალურ დროში აანალიზებს ტემპერატურულ მონაცემებს და ახდენს პოტენციური საფრთხის იდენტიფიცირებას მის კრიტიკულ ფაზაში გადასვლამდე. 
+          ანომალიის დაფიქსირების შემთხვევაში, მოწყობილობა მომხმარებელს აწვდის ინფორმაციას როგორც ლოკალურად (ხმოვანი სიგნალით), ისე დისტანციურად (Telegram-ბოტის შეტყობინებით). 
+          ეს დაბალბიუჯეტიანი და ეფექტური გადაწყვეტა არა მხოლოდ ზრდის „ჭკვიანი სახლის“ უსაფრთხოების სტანდარტს, არამედ მნიშვნელოვნად ამცირებს ხანძრით გამოწვეული მატერიალური ზიანისა და ტრაგიკული შემთხვევების რისკს.
+          </p>
+        </div>
+        <div class="section__image-wrapper" class="image-blockP">
+          <img class="section__image" src="assets/solution.jpg" alt="Problem" />
+        </div>
+      </div>
+    </section>
+
+    <section class="cards">
+      <div class="container">
+        <h2 class="cards__heading">როგორ მუშაობს</h2>
+        <p class="cards__subheading">
+          ოთხი მარტივი ეტაპი სამზარეულოს უსაფრთხოებისთვის
+        </p>
+
+        <div class="cards__list">
+          <div class="cards__item">
+            <div class="cards__item__icon cards__item__icon--blue">
+              📷
+              <span class="cards__item__step">1</span>
+            </div>
+            <h3 class="cards__item__heading">
+              თერმული კამერა უყურებს გაზქურას
+            </h3>
+            <p class="cards__item__paragraph">
+              MLX90640 რეალურ დროში აღრიცხავს სითბოს მონაცემებს ყველა სანთურაზე
+            </p>
+          </div>
+
+          <div class="cards__item">
+            <div class="cards__item__icon cards__item__icon--purple">
+              🖥️
+              <span class="cards__item__step">2</span>
+            </div>
+            <h3 class="cards__item__heading">
+              მიკროპროცესორი ამუშავებს ინფორმაიცას
+            </h3>
+            <p class="cards__item__paragraph">
+              ESP32 აანალიზებს ტემპერატურის ნიმუშებსა და ტენდენციებს
+            </p>
+          </div>
+
+          <div class="cards__item">
+            <div class="cards__item__icon cards__item__icon--orange">
+              ⚠️
+              <span class="cards__item__step">3</span>
+            </div>
+            <h3 class="cards__item__heading">
+              საფრთხის შემცველი პირობების აღმოჩენა
+            </h3>
+            <p class="cards__item__paragraph">
+              ავლენს გადახურებას, დავიწყებულ სანთურებს და ანომალიებს
+            </p>
+          </div>
+
+          <div class="cards__item">
+            <div class="cards__item__icon cards__item__icon--green">
+              📱
+              <span class="cards__item__step">4</span>
+            </div>
+            <h3 class="cards__item__heading">გზავნის შეტყობინებას</h3>
+            <p class="cards__item__paragraph">
+              ზუმერი და Wi-Fi შეტყობინებები გაცნობებთ
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================== -->
+    <!-- 3. Block Diagram -->
+    <!-- ========================== -->
+    <section class="drawings">
+      <div class="container">
+        <h2 class="drawings__heading">ბლოკდიაგრამა</h2>
+        <p>
+            ეს დიაგრამა ასასხავს ყველა იმ გამოყენებული ფიზიკურ და პროგრამულ კომპონენტს რომელიც უზურნვეყოფს მოწყობილობის მუშაობას და გამოყენებული აპარატურული ნაწილებს იერარქიულ სტრუქტურას: 
+            კავშირს ESP32-S3 მიკროკონტროლერის კავშირს სენსორთან, ბაზერთან და კვების ბლოკთან. მისი საშუალებით ნათლად ჩანს ინფორმაციული და ენერგეტიკული ნაკადები, 
+            როგორ გარდაიქმნება სენსორიდან მიღებული სიგნალი ციფრულ მონაცემად და როგორ იგზავნება შეტყობინება დინამიკის და telegram-ის მეშვეობით.
+        </p>
+        <div class="drawings__image-wrapper">
+          <img
+            class="drawings__image"
+            src="assets/Block_Diagram.png"
+            alt="სისტემის ბლოკდიაგრამა"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="drawings">
+      <div class="container">
+        <h2 class="drawings__heading">3D დიზაინი</h2>
+        <p>
+            წარმოდგენილი 3D მოდელი ასახავს მოწყობილობის ფიზიკურ კორპუსს და მაში გამოყნებული მოდულოების  გნალაგებას.  MLX9640 თერმული კამერის ადგილი მართვის ღილაკის და დინამიკის ადგილები. 
+            ეს მოდლი გვეხმარება გავიგოთ ამ მოწყობილობაში გამოყენებული კომპონენტების ფიზიკური განლაგება, რაც ნათლად აჩვენებს მოწყობილობის პორტატულობას, 
+            რადგან ის მორგებულია ჩვენ მიერ არჩეული ელექტრული მოდულების ზომებსა და ფუნქციონალურ საჭიროებებზე.
+        </p>
+        <div class="drawings__image-wrapper">
+          <img
+            class="drawings__image"
+            src="assets/3D model.png"
+            alt="სისტემის ბლოკდიაგრამა"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="drawings">
+      <div class="container">
+        <h2 class="drawings__heading">ელექტრული დიაგრამა</h2>
+        <p>
+            ჩვენი მოწყობილობის ელექტრული წრედი აგებულია esp32-s3 მიკროკონტროლერის ბაზაზე, რომელთანაც დაკავშირებულია  MLX90640 თერმულ სენსორი, აქტიურ ბაზერი და ღილაკის მოდული, 
+            რომლეიც ასახავს მათ ურთიერთკავშირს და ფუნქციურ ურთიერთქმედებას. Esp32-s3 არის მთავარი საკონტროლო ერთეილი რომელიც I2C ინტერფეისის საშუალებით იღებს ტემპერატურულ მონაცემებს MLX90640 სენსორისგან, 
+            ხოლო აქტიური ბაზერი უზრუნველყოფს ხმოვან სიგნალისაზიას განსზღვრული პირობების საფუძველზე, ხოლო ამ სისტემის სამართავად გამოიყენება ღილაკის მოდული, 
+            რაც ნათლად აჩვენებს მონაცემთა და საკონტროლო სიგნალების გადაცემის მიმართულებას  და მუშაობის ლოგიკის, მართვის პროცესისა და რეაგირების მექნიზმის უკეთ გაგებაში.
+        </p>
+        <div class="drawings__image-wrapper">
+          <img
+            class="drawings__image"
+            src="assets/electric_diagram.png"
+            alt="სისტემის ბლოკდიაგრამა"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="drawings">
+      <div class="container">
+        <h2 class="drawings__heading">ელექტრული წრედი</h2>
+        <p>
+            ეს წრედი ასახსვს სისტემაში გამოყენებული კოპონენტების კავშირს პინების დონეზე, სადაც კონკრეტულად ნაჩვენებია MLX90640 სენოსრის კავშირი ESP32-S3-თან I2C ინტერფეისით SDA დაკავშირებულია IO8 ხოლო SCL დაკავშირებულია IO9, 
+            ასევე  3-pin-იან ღილაკის და აქტიური ბაზერის მოდულის შემთხვევაში GPIO პინებზე და ეს გვეხმარება ელექტრული კავშირის ლოგიკის და ძაბვის განაწილების მოდულებს შორის განსაზღვრაში, 
+            რაც აუცილებელია მოწყობილობის ასწყობისთვის და დიაგნოსტირებისთვის, 
+            რა იმფორმაციაზე დაფუძნებითაც დება ფიზიკური წრედის აგება და პროგრამული კოდის დაწერაში.
+        </p>
+        <div class="drawings__image-wrapper">
+          <img
+            class="drawings__image"
+            src="assets/electric_circuit.png"
+            alt="სისტემის ბლოკდიაგრამა"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="drawings">
+      <div class="container">
+        <h2 class="drawings__heading">საერთო ფუნქციური და სტრუქტურული დიაგრამა</h2>
+        <p>
+            ნახაზი ნათლად აჩვენებს სუსტემის პროგრამული ალგორითმის ლოგიკას: ინიციალიზაციის პროცესი, ტემპერატურის გაზომვის ცკლი და გადაწყვეტილების მიღების ლოგიკა, 
+            თუ რა პირობის შესრულების შემდეგ ირთვება ხმოვანი სიგნალი და იგზვნება შეტყობინება telegram-ის საშუალებით.
+        </p>
+        <div class="block-diagram__image-wrapper">
+          <img
+            class="drawings__image"
+            src="assets/flowchart.png"
+            alt="სისტემის ბლოკდიაგრამა"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================== -->
+    <!-- 4. MLX90640 Info -->
+    <!-- ========================== -->
+    <section class="components">
+      <div class="container">
+        <div id="mlx90640" class="component">
+          <div class="component__content">
+            <h2 class="component__heading">MLX90640 ტემპერატურის სენსორი</h2>
+            <p class="component__description">
+                MLX90640 — თერმული ინფრაწითელი კამერა 32×24 პიქსელით და 110° ხედვის კუთხით, რომელიც ზომავს ტემპერატურას -40°C–დან +300°C-მდე.
+                მოწყობილობა გამოირჩევა გაზომვის მაღალი სიზუსტით, ±1°C ცდომილებით, რაც უზრუნველყოფს ტემპერატურის მაღალი სიზუსტით გამოთვლას. 
+                იგი იყენებს I²C ინტერფეისს, რაც მარტივად აერთიანებს ESP32-სთან. 
+                აქვს ცხელი წერტილების გამოვლენის შესაძლებლობა და რეალურ დროში აჩვენებს ტემპერატურის განაწილებას.
+            </p>
+          </div>
+          <img
+            class="component__image"
+            src="assets/mlx90640.jpg"
+            alt="თერმული სენსორი"
+          />
+        </div>
+
+        <!-- ========================== -->
+        <!-- 5. ESP32-S3 Info -->
+        <!-- ========================== -->
+        <div id="esp32-s3" class="component">
+          <div class="component__content">
+            <h2 class="component__heading">ESP32-S3 მიკროკონტროლერი</h2>
+            <p class="component__description">
+              ESP32-S3 — კომპაქტური, ძლიერი და მრავალფუნქციური მიკროკონტროლერი. შეიცავს Wi-Fi (802.11 b/g/n) და Bluetooth 5.0 LE მხარდაჭერას, აქვს Dual-core 240 MHz Xtensa LX7 პროცესორი, 
+              32MB Flash, 16MB PSRAM და მხარდაჭერა SPI, I²C, UART, ADC, DAC, PWM ინტერფეისებისთვის. 
+              გამოირჩევა ენერგოეფექტურობით და მარტივი ინტეგრირებით სხვადასხვა IoT, სენსორული და უსაფრთხოების სისტემების პროექტებში.
+            </p>
+          </div>
+          <img
+            class="component__image"
+            src="assets/esp32.jpg"
+            alt="მიკროპროცესორი"
+          />
+        </div>
+
+        <!-- ========================== -->
+        <!-- 6. HY-012 Active Buzzer Info -->
+        <!-- ========================== -->
+        <div id="buzzer" class="component">
+          <div class="component__content">
+            <h2 class="component__heading">HY-012 Active Buzzer მოდული</h2>
+            <p class="component__description">
+                ჩვენი სისტემა იყენებს აქტიურ ბაზერს (Active Buzzer) ლოკალური ხმოვანი სიგნალის გენერირებისთვის, რომელიც გამოსცემს დაახლოებით 85 bp სიმაღლის ხმას. 
+                აქტიური ბაზერი არის მარტივი მოწყობილობა, რომელიც მოითხოვს მხოლოდ მუდმივი ძაბვის  მიწოდებას ხმის გამოსაცემად.
+            </p>
+          </div>
+          <img
+            class="component__image"
+            src="assets/Buzzer.jpg"
+            alt="დინამიკი"
+          />
+        </div>
+
+        <!-- ========================== -->
+        <!-- 7. 5V 2A Wall Adapter Info -->
+        <!-- ========================== -->
+        <div id="power-supply" class="component">
+          <div class="component__content">
+            <h2 class="component__heading">5V 2A Wall Adapter Power Supply</h2>
+            <p class="component__description">
+              ჩვენ ვიყენებთ 5V DC/ 2A კვების ბლოკს რადგან კომპონენტები: esp32-3s-ს wi-fi პიკური გადაცემა იყენებს 355 mA და ხოლო პროცესორი სრული დატვირთივ შემთხვევაში 107.9mA, 
+              mlx90640 იყენებს 23mA  და აქტიური ბაზერი 30mA  რაც მთლიანობაში გამოდის  516mA. 
+              აქედან გამომდინარე რეკომენდირებული 2A კვების ბლოკის გამოყნება, რათა იყოს ენერგეტიკული რეზერვი და მოხდეს ძაბვის ვარდნის თავიდან აცილება. 
+            </p>
+          </div>
+          <img
+            class="component__image"
+            src="assets/adapter.jpg"
+            alt="კვების ბლოკი"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================== -->
+    <!-- 8. Temperature Decrease Statistics-->
+    <!-- ========================== -->
+    <section id="Monitoring-method" class="methodology">
+      <div class="container">
+        <h2 class="methodology__heading">ცეცხლის ამოცნობის მეთოდი</h2>
+        <div class="methodology__content">
+          <p class="methodology__paragraph">
+            მოწყობილობა განთავსდება გაზქურის სიმაღლეზე ისე, რომ სენსორმა ყველა
+            სანთური ხედოს. პროგრამულად განისაზღვრება მინიმალური ტემპერატურა,
+            რომლის გადაცდომის შემთხვევაში მოწყობილობა ცეცხლის არსებობას
+            განსაზღვრავს და რთავს სიგნალს.
+          </p>
+
+          <div class="methodology__image-wrapper">
+            <img
+              class="methodology__image"
+              src="assets/prototype.png"
+              alt="პროტოტიპი"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================== -->
+    <!-- 9. Temperature Decrease Statistics -->
+    <!-- ========================== -->
+    <section id="statistics" class="stats">
+      <div class="container">
+        <h2 class="stats__heading">ტემპერატურის დაწევის სტატისტიკა</h2>
+
+        <div class="stats__items">
+          <div class="stats__item">
+            <p class="stats__item__description">
+              დიდი ქვაბი (15 ლ): ნელი გაგრილების სიხშირე (~0.5 °C წუთში):
+            </p>
+            <img
+              class="stats__item__image"
+              src="assets/1.png"
+              alt="ტემპერატურის სტატისტიკა 1"
+            />
+          </div>
+
+          <div class="stats__item">
+            <p class="stats__item__description">
+              დიდი ქვაბი (2 ლ): ნელი გაგრილების სიხშირე (~0.5 °C წუთში):
+            </p>
+            <img
+              class="stats__item__image"
+              src="assets/2.png"
+              alt="ტემპერატურის სტატისტიკა 2"
+            />
+          </div>
+
+          <div class="stats__item">
+            <p class="stats__item__description">
+              გაზის სანთურის გაგრილების სიხშირე (~ 4.27 °C/წამში):
+            </p>
+            <img
+              class="stats__item__image"
+              src="assets/3.png"
+              alt="ტემპერატურის სტატისტიკა 3"
+            />
+          </div>
+
+          <div class="stats__item">
+            <p class="stats__item__description">
+              ქვაბის ძირის გაგრილების სიხშირე (~ 27.8 °C/წამში):
+            </p>
+            <img
+              class="stats__item__image"
+              src="assets/4.png"
+              alt="ტემპერატურის სტატისტიკა 4"
+            />
+          </div>
+
+          <div class="stats__item">
+            <p class="stats__item__description">
+              გაზის სანთურის გაგრილების სიხშირე (~2.18 °C/წამში):
+            </p>
+            <img
+              class="stats__item__image"
+              src="assets/5.png"
+              alt="ტემპერატურის სტატისტიკა 5"
+            />
+          </div>
+
+          <div class="stats__item">
+            <p class="stats__item__description">
+              ქვაბის ძირის გაგრილების სიხშირე (~ 4.27 °C/წამში):
+            </p>
+            <img
+              class="stats__item__image"
+              src="assets/6.png"
+              alt="ტემპერატურის სტატისტიკა 6"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================== -->
+    <!-- 10. Telegram Notification Explanation -->
+    <!-- ========================== -->
+    <section id="telegram" class="notify">
+      <div class="explanation container">
+        <h2 class="explanation__heading">Telegram Bot შენტყობინება</h2>
+        <p class="explanation__description">
+          ESP32 მოწყობილობა უკავშირდება Wi-Fi-ს და ვებ-მოთხოვნების (HTTP/HTTPS)
+          გამოყენებით უგზავნის შეტყობინებებს Telegram ბოტს. ბოტი, თავის მხრივ,
+          აგზავნის შეტყობინებებს პირდაპირ თქვენს ტელეფონზე, რაც საშუალებას
+          აძლევს მიიღოთ რეალური დროის გაფრთხილება სახლიდან გაშორებულ
+          შემთხვევაშიც.
+        </p>
+
+        <p class="explanation__example">შეტყობინების მაგალითი:</p>
+        <pre class="explanation__example-content">
+⚠️ გასქურის გაფრთხილება
+
+დაფიქსირდა მაღალი ტემპერატურა: 185°C
+გთხოვთ, დაუყოვნებლივ შეამოწმეთ გაზქურა!</pre
+        >
+      </div>
+    </section>
+
+
+<!-- ========================== -->
+<!-- 11. Network config Explanation -->
+<!-- ========================== -->
+    <section id="telegram" class="notify">
+      <div class="explanation container">
+        <h2 class="explanation__heading">ქსელის კონფიგურაცია</h2>
+        <p class="explanation__description">
+          იმისთვის რომ სისტემა დაუკავშირდეს ქსელს გამოყენებულია ავტომატიზირებული მეთოდი, როდესაც ESP32 ვერ უკავშირდება  ქსელს, 
+          ის გადადის  Access Point რეჟიმში  და ქმნის დროებით ქსელს რომლზეც მომხარებლის დაკავშირების შემთხვევაში, იხსნება  სპეციალური ვებ-ფორმა, 
+          სადაც მომხარებელს შეჰყავს Wi-fi-ს მონაცემები, რასაც მოწყობილობა იმახსოვრებას და იყენებს ქსელთან დასაკავშირებლად. 
+        </p>
+      </div>
+    </section>
+
+    <div class="explanation__links-container">
+    <h3 class="explanation__heading-centered">პროექტის რესურსები</h3>
+    
+    <div class="link-inline-group">
+            <a href="https://github.com/MateMch-iliauni/Final-Project-Website" class="inline-link" target="_blank">
+                <i class="fab fa-github"></i> ვებგვერდი
+            </a>
+        
+            <span class="link-divider">/</span>
+
+            <a href="https://github.com/MateMch-iliauni/Project-Drawings" class="inline-link" target="_blank">
+                <i class="fas fa-pencil-ruler"></i> ნახაზები
+            </a>
+
+            <span class="link-divider">/</span>
+
+            <a href="https://github.com/MateMch-iliauni/Project-Codes" class="inline-link" target="_blank">
+                <i class="fas fa-code"></i> პროექტის კოდი
+            </a>
+
+            <span class="link-divider">/</span>
+
+            <a href="https://github.com/MateMch-iliauni/Documentation" class="inline-link" target="_blank">
+                <i class="fas fa-file-alt"></i> დოკუმენტაცია
+            </a>
+            <a href="https://github.com/MateMch-iliauni/Presentation" class="inline-link" target="_blank">
+                <i class="fas fa-file-powerpoint"></i> პრეზენტაცია
+            </a>
+        </div>
+    </div>
+
+<!-- ========================== -->
+<!-- 12. Industry Standards Section -->
+<!-- ========================== -->
+<!-- Industry Standards Section -->
+<section id="industry-standards" class="industry-standards">
+  <div class="container">
+    <div class="standards-header">
+      <h2 class="standards-title">ინდუსტრიული სტანდარტები</h2>
+      <p class="standards-subtitle">Industry Standards</p>
+    </div>
+
+    <div class="standards-grid">
+      <!-- Electrical Engineering -->
+      <div class="standard-card">
+        <div class="standard-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+        </div>
+        <h3 class="standard-title">ელექტრული ინჟინერია</h3>
+        <p class="standard-title-en">Electrical Engineering</p>
+        <ul class="standard-list">
+          <li>
+            <strong>IEEE 802.x</strong> – კაბელური და უკაბელო ქსელური კომუნიკაციისთვის (Wi-Fi კავშირი)
+          </li>
+          <li>
+            <strong>IEC 62368-1</strong> – უსაფრთხოების მოთხოვნები
+          </li>
+          <li>
+            <strong>IPC სტანდარტები</strong> – PCB დიზაინი
+          </li>
+        </ul>
+      </div>
+
+      <!-- Embedded Systems & IoT -->
+      <div class="standard-card">
+        <div class="standard-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+            <line x1="6" y1="6" x2="6.01" y2="6"/>
+            <line x1="6" y1="18" x2="6.01" y2="18"/>
+          </svg>
+        </div>
+        <h3 class="standard-title">ჩაშენებული სისტემები და IoT</h3>
+        <p class="standard-title-en">Embedded Systems & IoT</p>
+        <ul class="standard-list">
+          <li>
+            <strong>ISO/IEC 27001</strong> – ინფორმაციული უსაფრთხოება
+          </li>
+        </ul>
+      </div>
+
+      <!-- Software -->
+      <div class="standard-card">
+        <div class="standard-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="16 18 22 12 16 6"/>
+            <polyline points="8 6 2 12 8 18"/>
+          </svg>
+        </div>
+        <h3 class="standard-title">პროგრამული უზრუნველყოფა</h3>
+        <p class="standard-title-en">Software</p>
+        <ul class="standard-list">
+          <li>
+            <strong>REST</strong> – ვებ API არქიტექტურა, Telegram Bot API-თან კომუნიკაცია
+          </li>
+        </ul>
+      </div>
+
+      <!-- Networks & Communication -->
+      <div class="standard-card">
+        <div class="standard-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="2"/>
+            <path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/>
+          </svg>
+        </div>
+        <h3 class="standard-title">ქსელები და კომუნიკაცია</h3>
+        <p class="standard-title-en">Networks & Communication</p>
+        <ul class="standard-list">
+          <li>
+            <strong>RFC სტანდარტები</strong> – ქსელური ოქმები (HTTP)
+          </li>
+          <li>
+            <strong>IEEE 1588</strong> – დროის სინქრონიზაცია
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <section class="weeklywork">
+      <div class="container">
+        <h2 class="weeklywork__heading">სამუშაო განრიგი</h2>
+        <div class="weeklywork__image-wrapper">
+          <img
+            class="weeklywork__image"
+            src="assets/weeklyworkpng.png"
+            alt="სამუშაო განრიგი"
+          />
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__content container">
+        <p class="footer__paragraph">
+          📧 დათო ქადარია: dato.kadaria.1@iliauni.edu.ge
+        </p>
+        <p class="footer__paragraph">
+          📧 მათე მჭედლიშვილი: mate.mchedlishvili.1@iliauni.edu.ge
+        </p>
+      </div>
+      <p class="footer__copyright">
+        ილიას სახელმწიფო უნივერსიტეტი © 2025 ყველა უფლება დაცულია
+      </p>
+    </footer>
+  </body>
+</html>
+
