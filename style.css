@@ -1232,8 +1232,24 @@ section {
   border-radius: 2px;
 }
 
+.resposnibility__heading::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--color-accent-green),
+    var(--color-accent-orange)
+  );
+  border-radius: 2px;
+}
 
-.weeklywork__image-wrapper{
+.weeklywork__image-wrapper,
+.resposnibility__image-wrapper {
   max-width: 900px;
   margin-inline: auto;
   border-radius: 20px;
@@ -1245,17 +1261,18 @@ section {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.weeklywork__image-wrapper:hover{
+.weeklywork__image-wrapper:hover,
+.resposnibility__image-wrapper:hover {
   transform: translateY(-8px);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
 }
 
-.weeklywork__image{
+.weeklywork__image,
+.resposnibility__image {
   width: 100%;
   border-radius: 12px;
   display: block;
 }
-
 /* =========================================================
    Footer - Enhanced styling
    ========================================================= */
